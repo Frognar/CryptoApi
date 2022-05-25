@@ -1,2 +1,2 @@
 # CryptoApi
-Simple Crypto Web Api made with .Net 6
+Simple RSA Cryptography Web API made with .Net 6
