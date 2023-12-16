@@ -1,5 +1,4 @@
 ﻿using Crypto;
-using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi;
 
@@ -12,11 +11,11 @@ public static class EndpointsDefinitions
 
     public static void RegisterCryptoEndpoints(this WebApplication app)
     {
-        app.MapPost("api/encrypt", Encrypt);
-        app.MapPost("api/decrypt", Decrypt);
+        app.MapGet("api/encrypt", Encrypt);
+        app.MapGet("api/decrypt", Decrypt);
     }
 
-    private static async Task<IResult> Encrypt([FromBody] string text, ICrypto crypto)
+    private static async Task<IResult> Encrypt(string text, ICrypto crypto)
     {
         try
         {
@@ -28,7 +27,7 @@ public static class EndpointsDefinitions
         }
     }
 
-    private static async Task<IResult> Decrypt([FromBody] string text, ICrypto crypto)
+    private static async Task<IResult> Decrypt(string text, ICrypto crypto)
     {
         try
         {
