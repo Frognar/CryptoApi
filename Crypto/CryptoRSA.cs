@@ -8,7 +8,6 @@ public class CryptoRSA : ICrypto
     private const string PemFileName = "rsa.pem";
     private readonly RSACryptoServiceProvider _rsa;
 
-
     public CryptoRSA()
     {
         string pem;
