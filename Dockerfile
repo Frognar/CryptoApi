@@ -9,3 +9,8 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /App
 COPY --from=build-env /App/out .
 ENTRYPOINT ["dotnet", "WebApi.dll"]
+
+EXPOSE 8081
+EXPOSE 8080
+ENV ASPNETCORE_HTTP_PORT=https://+:8081
+ENV ASPNETCORE_HTTP_URLS=http://+:8080
